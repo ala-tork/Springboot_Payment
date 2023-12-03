@@ -29,14 +29,14 @@ public class StripeApi {
         return stripeService.CreateCardToekn(model);
     }
 
-    @PostMapping("/charge")
+    @PostMapping("/charges")
     @ResponseBody
     public StripeChargeDto charge (@RequestBody StripeChargeDto model){
         return stripeService.charge(model);
     }
 
 
-    @PostMapping("/payment")
+    @PostMapping("/payments")
     public ResponseEntity<String> payment(@RequestBody PaymentRequest paymentRequest) {
         try {
             Map<String, Object> chargeParams = new HashMap<>();
@@ -61,7 +61,11 @@ public class StripeApi {
 //        "ID_TAG": "25467954650"
 //    }
 //    }
-
+    @GetMapping("/hello")
+    @ResponseBody
+    public String hello(){
+        return ("hello word");
+    }
 
 
     //others
