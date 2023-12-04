@@ -76,6 +76,13 @@ public class StripeApi {
         return stripeService.createSubscription(model);
     }
 
+    @PostMapping("/customer/subscription")
+    @ResponseBody
+    public StripeSubscriptionResponse subscriptions(@RequestBody StripeSubscriptionDto model) {
+
+        return stripeService.createSubscription(model);
+    }
+
     @DeleteMapping("/subscription/{id}")
     @ResponseBody
     public SubscriptionCancelRecord cancelSubscription(@PathVariable String id){
